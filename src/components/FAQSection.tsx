@@ -58,6 +58,56 @@ const FAQSection: React.FC<FAQSectionProps> = ({ language }) => {
           answer: 'شاهد ريلزات جديدة باستمرار.\nكن من أوائل من يشاهدون الريلزات كل أسبوع.\nامسح رموز QR عند توفرها.\nتابع الرادار للعثور على عروض قريبة منك.'
         }
       ]
+    },
+    en: {
+      title: 'Frequently Asked Questions about Radar App',
+      subtitle: 'Find answers to the most common questions about our platform.',
+      faqs: [
+        {
+          question: 'What is the Radar app?',
+          answer: 'Radar is an innovative app that combines entertaining advertisements with rewards, where users can watch reels (short clips) from participating stores, discover offers and prizes, and earn points that can be redeemed for real rewards.'
+        },
+        {
+          question: 'How do I set my interests within the app?',
+          answer: 'When registering for the first time, you can choose your interests from several categories (such as: fashion, technology, food...) and reels and offers that match these interests will be displayed.'
+        },
+        {
+          question: 'What are reels in the Radar app?',
+          answer: 'Reels are short video clips that represent promotional advertisements from participating stores, or entertainment clips from Radar, and points are awarded for watching them.'
+        },
+        {
+          question: 'What is the "Weekly Gem" and how can I win it?',
+          answer: 'Each week, a gem is hidden inside a random reel, and the first user to watch this reel will automatically win the gem and be awarded predetermined additional points from Radar.'
+        },
+        {
+          question: 'What is the "Prize Store"?',
+          answer: 'It is a section within the app through which you can redeem your points for real prizes offered by participating stores or from Radar, such as coupons, products, or special gifts.'
+        },
+        {
+          question: 'How do I use the "Scan and Win - QR" feature?',
+          answer: 'Look for Radar-specific QR codes inside participating stores or events, then scan them using the app to earn instant points.'
+        },
+        {
+          question: 'What is "Radar Offers and Stores"?',
+          answer: 'Radar is an interactive feature that enables you to discover exclusive offers and stores within a geographical range you choose (for example, 4 kilometers), and nearby offers and stores are displayed directly on the map.'
+        },
+        {
+          question: 'How do I see all stores participating in Radar?',
+          answer: 'Within the "All Stores" section, you can browse all participating stores in the app, and active stores that offer more deals and prizes are highlighted.'
+        },
+        {
+          question: 'Do I need to create an account to use the app?',
+          answer: 'Yes, you need to create a free account to customize your experience, track your points, participate in contests, and purchase prizes from the store.'
+        },
+        {
+          question: 'Do reels expire?',
+          answer: 'Yes, each reel appears for a specific time period determined based on the agreement between Radar and the store that owns the advertisement.'
+        },
+        {
+          question: 'How can I increase my chances of earning points and gems?',
+          answer: 'Watch new reels constantly.\nBe among the first to watch reels each week.\nScan QR codes when available.\nFollow the radar to find offers near you.'
+        }
+      ]
     }
   };
 
