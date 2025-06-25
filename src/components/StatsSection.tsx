@@ -92,20 +92,26 @@ const StatsSection: React.FC<StatsSectionProps> = ({ language }) => {
     return `${prefix || ''}${formatted}${suffix || ''}`;
   };
 
+  const handleGetStarted = () => {
+    window.open('https://wa.me/+963968972764', '_blank');
+  };
+
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-dark-800 to-black relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden"
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
+      {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-coral-500/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-coral-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-20 right-20 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-on-scroll">
+          {/* Left Content */}
+          <div className="space-y-6">
             <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
               {t.title}
             </h2>
@@ -118,28 +124,47 @@ const StatsSection: React.FC<StatsSectionProps> = ({ language }) => {
               {t.description}
             </p>
 
-            <a href="https://wa.me/+963968972764" className="gradient-coral text-white px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-coral-500/30 mt-8">
-              {t.cta}
-            </a >
+            <button
+              onClick={handleGetStarted}
+              className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900 group"
+            >
+              <span>{t.cta}</span>
+              <svg
+                className={`w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 ${language === 'ar' ? 'mr-2 group-hover:-translate-x-1' : 'ml-2'}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={language === 'ar' ? "M10 19l-7-7m0 0l7-7m-7 7h18" : "m9 18 6-6-6-6"}
+                />
+              </svg>
+            </button>
           </div>
 
-          <div className="animate-on-scroll stagger-2">
-            <div className="glass-dark rounded-2xl p-6 relative">
+          {/* Right Dashboard */}
+          <div className="relative">
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 relative overflow-hidden">
+              {/* Dashboard Header */}
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-white font-semibold text-lg">
                   {language === 'en' ? 'Analytics Dashboard' : 'لوحة التحليلات'}
                 </h3>
                 <div className="flex space-x-2 rtl:space-x-reverse">
-                  <div className="w-3 h-3 bg-coral-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                 </div>
               </div>
 
+              {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {Object.entries(t.stats).map(([key, stat]) => (
-                  <div key={key} className="bg-black/30 rounded-xl p-4 text-center">
-                    <div className="text-2xl font-bold text-coral-500 mb-1 animate-counter">
+                  <div key={key} className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-700/30 hover:border-orange-500/30 transition-all duration-300">
+                    <div className="text-2xl font-bold text-orange-400 mb-1 transition-all duration-300">
                       {formatNumber(counts[key as keyof typeof counts], stat.prefix, stat.suffix)}
                     </div>
                     <div className="text-sm text-gray-400">{stat.label}</div>
@@ -147,14 +172,15 @@ const StatsSection: React.FC<StatsSectionProps> = ({ language }) => {
                 ))}
               </div>
 
-              <div className="bg-black/30 rounded-xl p-4 h-48 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-coral-500/20 to-transparent"></div>
+              {/* Chart Area */}
+              <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 h-48 flex items-center justify-center relative overflow-hidden border border-gray-700/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent"></div>
 
                 <div className="relative w-full h-full flex items-end justify-between px-4">
                   {Array.from({ length: 12 }, (_, i) => (
                     <div
                       key={i}
-                      className="bg-coral-500/60 rounded-t w-4 transition-all duration-1000 ease-out"
+                      className="bg-gradient-to-t from-orange-500 to-orange-400 rounded-t w-4 transition-all duration-1000 ease-out hover:from-orange-400 hover:to-orange-300"
                       style={{
                         height: isVisible ? `${Math.random() * 80 + 20}%` : '0%',
                         animationDelay: `${i * 0.1}s`
@@ -164,12 +190,24 @@ const StatsSection: React.FC<StatsSectionProps> = ({ language }) => {
                 </div>
               </div>
 
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-coral-500 rounded-full animate-float opacity-60"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-coral-400 rounded-full animate-float opacity-40" style={{ animationDelay: '1.5s' }}></div>
+              {/* Floating decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full animate-bounce opacity-60"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-orange-400 rounded-full animate-bounce opacity-40" style={{ animationDelay: '1.5s' }}></div>
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 };
