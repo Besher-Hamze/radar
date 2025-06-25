@@ -37,7 +37,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-white overflow-x-hidden">
       <div className="main-container">
         <Header
           language={language}
@@ -47,7 +47,7 @@ const Index = () => {
           isTransitioning={false}
         />
 
-        <main>
+        <main className="pt-16 md:pt-0">
           <HeroSection
             language={language}
             onTitleAnimation={handleTitleAnimation}

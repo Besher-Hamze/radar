@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* Custom Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap");
 
 @layer base {
   :root {
@@ -40,21 +40,21 @@
 
   body {
     @apply bg-black text-foreground font-inter;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   [dir="rtl"] {
-    font-family: 'Noto Sans Arabic', sans-serif;
+    font-family: "Noto Sans Arabic", sans-serif;
   }
 }
 
 @layer utilities {
   .font-inter {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .font-arabic {
-    font-family: 'Noto Sans Arabic', sans-serif;
+    font-family: "Noto Sans Arabic", sans-serif;
   }
 
   .glass {
@@ -70,19 +70,19 @@
   }
 
   .gradient-coral {
-    background: linear-gradient(135deg, #FC5D48 0%, #E8402A 100%);
+    background: linear-gradient(135deg, #fc5d48 0%, #e8402a 100%);
   }
 
   .gradient-dark {
-    background: linear-gradient(135deg, #272636 0%, #1C1C28 100%);
+    background: linear-gradient(135deg, #272636 0%, #1c1c28 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, #000000 0%, #272636 50%, #FC5D48 100%);
+    background: linear-gradient(135deg, #000000 0%, #272636 50%, #fc5d48 100%);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #FC5D48 0%, #E8402A 100%);
+    background: linear-gradient(135deg, #fc5d48 0%, #e8402a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -92,6 +92,10 @@
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease-out;
+  }
+  .main-container {
+    position: relative;
+    min-height: 100vh;
   }
 
   .animate-on-scroll.visible {
