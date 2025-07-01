@@ -160,7 +160,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language, onTitleAnimation })
                   {/* Phone Screen Content - GIF Placeholder */}
                   <div className="absolute inset-4 bg-gradient-to-b from-black to-black rounded-[2rem] flex items-center justify-center overflow-hidden">
                     {/* GIF Container */}
-                    <img src="/images/screen_1.jpg" alt="" />
+                    <img src="/images/animated_radar.svg" alt="" />
                   </div>
 
                   {/* Phone Notch */}

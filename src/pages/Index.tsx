@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import HowItWorksSection from '../components/HowItWorksSection';
+import ScanAndWinSection from '../components/ScanAndWinSection';
 import PartnersSection from '../components/PartnersSection';
 import FAQSection from '../components/FAQSection';
 import StatsSection from '../components/StatsSection';
@@ -53,6 +54,7 @@ const Index = () => {
             onTitleAnimation={handleTitleAnimation}
           />
           <HowItWorksSection language={language} />
+          <ScanAndWinSection language={language} />
           <PartnersSection language={language} />
           <StatsSection language={language} />
           <FAQSection language={language} />

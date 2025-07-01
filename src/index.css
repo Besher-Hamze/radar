@@ -176,4 +176,61 @@
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 10px 25px rgba(252, 93, 72, 0.3);
   }
+
+  /* Custom grid for QR pattern */
+  .grid-cols-20 {
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+  }
+
+  /* Float animation */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Glow animation */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(252, 93, 72, 0.5);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(252, 93, 72, 0.8), 0 0 40px rgba(252, 93, 72, 0.6);
+    }
+  }
+
+  /* Text truncation utilities */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Dark theme variations */
+  .dark-800 {
+    background-color: #1f1f23;
+  }
+
+  .dark-900 {
+    background-color: #16161a;
+  }
 }
