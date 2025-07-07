@@ -143,7 +143,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language, onTitleAnimation })
                 <a
                   className="flex items-center justify-center space-x-3 rtl:space-x-reverse border-2 border-coral-500 text-coral-500 px-6 py-4 rounded-lg hover:bg-coral-500 hover:text-white transition-all duration-300 hover:scale-105 min-w-[200px]"
                   data-animate-language
-                  href='https://limewire.com/d/GxVwT#QdOZ0LH1cm'
+                  href='https://www.filemail.com/d/zrspxlcqwmtranx'
                 >
                   <Smartphone className="w-5 h-5" />
                   <span className="font-medium">{t.directDownload}</span>

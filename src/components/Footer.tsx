@@ -107,17 +107,17 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <div>
               <h4 className="font-semibold mb-4">{t.followUs}</h4>
               <div className="flex space-x-4 rtl:space-x-reverse">
-                <a 
-                  href="https://www.instagram.com/radar_sy?igsh=dHIzdWVtZDByMzdw" 
-                  target="_blank" 
+                <a
+                  href="https://www.instagram.com/radar.syr?igsh=dHIzdWVtZDByMzdw"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 group"
                 >
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a 
-                  href="https://www.facebook.com/share/1KBa8AAJEF/" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/radar.syr"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 group"
                 >
@@ -132,20 +132,35 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <h3 className="text-2xl font-bold">{t.downloads}</h3>
 
             <div className="space-y-4">
-              <button className="flex items-center space-x-3 rtl:space-x-reverse bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+              <a
+                href="#" // TODO: Replace with real App Store link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 rtl:space-x-reverse bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              >
                 <AppStoreIcon />
                 <span className="font-medium">{t.appStore}</span>
-              </button>
+              </a>
 
-              <button className="flex items-center space-x-3 rtl:space-x-reverse bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.anycode.radar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 rtl:space-x-reverse bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              >
                 <GooglePlayIcon />
                 <span className="font-medium">{t.playStore}</span>
-              </button>
+              </a>
 
-              <button className="flex items-center space-x-3 rtl:space-x-reverse border-2 border-coral-500 text-coral-500 px-6 py-3 rounded-lg hover:bg-coral-500 hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+              <a
+                href="https://www.filemail.com/d/zrspxlcqwmtranx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 rtl:space-x-reverse border-2 border-coral-500 text-coral-500 px-6 py-3 rounded-lg hover:bg-coral-500 hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              >
                 <Smartphone className="w-5 h-5" />
                 <span className="font-medium">{t.directDownload}</span>
-              </button>
+              </a>
             </div>
 
             {/* QR Code */}
